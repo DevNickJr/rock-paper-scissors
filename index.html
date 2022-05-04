@@ -26,29 +26,47 @@
     <img src="./images/logo.svg" alt="logo" width="100px">
     <div class="score-div">
       <p>Score</p>
-      <p class="score"></p>
+      <p class="score" id="score"></p>
     </div>
   </header>
   <main>
-    <div class="triangle">
+    <div class="triangle" id="game-options">
       <img src="./images/bg-triangle.svg" alt="background-triangle" id="triangle-img">
-      <div class="options paper"><img src="./images/icon-paper.svg" alt=""></div>
-      <div class="options scissors"><img src="./images/icon-scissors.svg" alt=""></div>
-      <div class="options rock"><img src="./images/icon-rock.svg" alt=""></div>
+      <div class="options paper" id="paper"><img src="./images/icon-paper.svg" alt=""></div>
+      <div class="options scissors" id="scissors"><img src="./images/icon-scissors.svg" alt=""></div>
+      <div class="options rock" id="rock"><img src="./images/icon-rock.svg" alt=""></div>
     </div>
 
-    <button class="rules">Rules</button>
+    
 
-    <div class="outcome">
-      <p>You Picked</p>
-      <p>The House Picked</p>
-      
-      <p class="win">You Win</p>
-      <p class="lose">You Lose</p>
-      <button class="play-again">Play Again</button>
-      
+    <div class="outcome hide" id="choices">
+      <div class="outcome__head">
+        <p>You Picked</p>
+        <div class="outcome__image-you" id="your-choice"></div>
+      </div>
+      <div class="outcome__image">
+        <p>The House Picked</p>
+        <div class="outcome__image-house" id="computer-choice"></div>
+      </div>
     </div>
+    
+    <div class="result hide" id="outcome">
+      <p class="win-or-lose" id="win-or-lose"></p>
+      <button onclick="reloader()" class="play-again" id="play-again">Play Again</button>
+    </div>
+
+  <div class="modal-container" id="modal-container">
+    <div class="rules-modal" id="rules-modal" style="text-align: center;">
+      <h2 class="shadow">RULES</h2>
+      <img src="./images/image-rules.svg" alt="">
+      <div onclick="closeModal()" class="close shadow"><img src="./images/icon-close.svg" alt=""></div>
+    </div>
+  </div>
+  
+
+
   </main>
+  <footer><button onclick="openModal()" class="rules">Rules</button></footer>
 
 
   
@@ -56,5 +74,7 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+
+  <script src="./main.js"></script>
 </body>
 </html>
